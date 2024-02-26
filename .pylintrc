@@ -1,5 +1,15 @@
 [MAIN]
 
+disable=
+      C0305, # Trailing newlines
+      C0116, # Missing function or method docstring
+      C0114, # Missing module docstring
+      E0015, # unrecognized option
+      W0703, # catching too general exception Exception
+      C0209, # consider using f string
+      C0321, # Multiple statements
+      R0801 # Duplicated code
+
 # Analyse import fallback blocks. This can be used to support both Python 2 and
 # 3 compatible code, which means that the block might have code that exists
 # only in one or another interpreter, leading to false positives when analysed.
