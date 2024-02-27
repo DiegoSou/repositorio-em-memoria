@@ -13,6 +13,8 @@ disable=
       R1722, # Consider using 'sys.exit' instead
       C0303, # Trailing whitespace
       R0903, # Too few public methods (1/2) 
+      W0719, # Raising too general exception
+      W0707, # Consider explicitly re-raising
 
 # Analyse import fallback blocks. This can be used to support both Python 2 and
 # 3 compatible code, which means that the block might have code that exists
