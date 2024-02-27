@@ -8,7 +8,8 @@ disable=
       W0703, # catching too general exception Exception
       C0209, # consider using f string
       C0321, # Multiple statements
-      R0801 # Duplicated code
+      R0801, # Duplicated code
+      R1722, # Consider using 'sys.exit' instead
 
 # Analyse import fallback blocks. This can be used to support both Python 2 and
 # 3 compatible code, which means that the block might have code that exists
