@@ -1,4 +1,6 @@
 from .constructors.introduction import introduction
+from .constructors.people_finder_constructor import people_finder_constructor
+from .constructors.people_register_constructor import people_register_constructor
 
 def start() -> None:
     while True:
@@ -6,9 +8,9 @@ def start() -> None:
 
         match command:
             case '1':
-                print('Comando 1 foi acionado.')
+                people_register_constructor()
             case '2':
-                print('Comando 2 foi acionado.')
+                people_finder_constructor()
             case '5':
                 exit()
             case _:
