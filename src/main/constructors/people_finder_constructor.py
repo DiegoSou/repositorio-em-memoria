@@ -10,6 +10,7 @@ def people_finder_constructor():
     people_finder_controller = PeopleFinderController()
     response = people_finder_controller.find(people_finder_info)
     
+    # callback
     if response["success"]:
         people_finder_view.find_person_success(response["message"])
     else:

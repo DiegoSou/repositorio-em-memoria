@@ -18,13 +18,20 @@ class PeopleFinderView:
         os.system('cls||clear')
         
         success_message = f'''
-            Usuário encontrado com sucesso!
+            Usuário(s) encontrado(s) com sucesso!
             
             Tipo: { message["type"] }
             Registros: { message["count"] }
             Infos:
-                Name: { message["infos"]["name"] }
         '''
+        
+        for person in message["info"]:
+            success_message += f'''
+                Id: { person["id"] }
+                Name: { person["attributes"]["name"] }
+                Age: { person["attributes"]["age"] }
+                Height: { person["attributes"]["height"] }
+            '''
         
         print(success_message)
         

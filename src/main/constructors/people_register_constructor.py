@@ -10,6 +10,7 @@ def people_register_constructor():
     people_register_controller = PeopleRegisterController()
     response = people_register_controller.register(people_register_info)
     
+    # callback
     if response["success"]:
         people_register_view.registry_person_success(response["message"])
     else:

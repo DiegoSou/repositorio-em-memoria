@@ -2,6 +2,7 @@ import os
 from typing import Dict
 
 class PeopleRegisterView:
+    
     def registry_person_view(self) -> Dict:
         os.system('cls||clear')
         
@@ -15,7 +16,7 @@ class PeopleRegisterView:
             "age": age,
             "height": height
         }
-        
+
         return new_person_info
 
     def registry_person_success(self, message: Dict) -> None:
@@ -27,8 +28,9 @@ class PeopleRegisterView:
             Tipo: { message["type"] }
             Registros: { message["count"] }
             Atributos:
-                Nome: { message["attributes"]["name"] }
-                Idade: { message["attributes"]["age"] }
+                Id: { message["info"]["id"] }
+                Nome: { message["info"]["attributes"]["name"] }
+                Idade: { message["info"]["attributes"]["age"] }
         '''
         
         print(success_message)
