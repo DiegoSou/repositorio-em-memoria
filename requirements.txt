@@ -2,6 +2,7 @@ astroid==3.1.0
 cfgv==3.4.0
 dill==0.3.8
 distlib==0.3.8
+Faker==23.3.0
 filelock==3.13.1
 identify==2.5.35
 isort==5.13.2
@@ -10,6 +11,8 @@ nodeenv==1.8.0
 platformdirs==4.2.0
 pre-commit==3.6.2
 pylint==3.1.0
+python-dateutil==2.8.2
 PyYAML==6.0.1
+six==1.16.0
 tomlkit==0.12.3
 virtualenv==20.25.1
