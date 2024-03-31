@@ -1,15 +1,19 @@
 from typing import Dict
 from src.models.entities import Person
-from src.models.repositories import person_repository
+from src.models.repositories import PersonRepository
 
 
 class FindPersonController:
+    def __init__(self, person_repository: PersonRepository):
+        self.__person_repository = person_repository
+
+    
     def find(self, search_params: Dict):
         try:
             self.__validate_fields(search_params)
             
             # model
-            persons_found = person_repository.find_by_name(search_params["name"])
+            persons_found = self.__person_repository.find_by_name(search_params["name"])
 
             if len(persons_found) == 0:
                 raise Exception('Nenhum usuário com este nome foi encontrado.')

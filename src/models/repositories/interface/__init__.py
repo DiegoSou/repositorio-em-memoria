@@ -1,0 +1,1 @@
+from .person_repository_protocol import PersonRepository

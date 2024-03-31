@@ -3,13 +3,14 @@ from src.models.entities.person import Person
 
 faker_instance = Faker()
 
-class __PersonRepository:
+
+class PersonRepositoryImpl:
     def __init__(self) -> None:
         self.__persons = []
         self.__repository_id = '001'
 
 
-    def register_new(self, person: Person) -> int:
+    def register_new(self, person: Person) -> str:
         if person.person_id is not None:
             raise ValueError('You cannot create new records with "person_id" value filled')
         
@@ -28,4 +29,4 @@ class __PersonRepository:
         return persons_found
 
 
-person_repository = __PersonRepository()
+person_repository = PersonRepositoryImpl()

@@ -1,5 +1,6 @@
 from src.views import FindPersonView
 from src.controllers import FindPersonController
+from src.models.repositories import person_repository
 
 
 def find_person_route():
@@ -8,7 +9,7 @@ def find_person_route():
     person_information = find_person_page.find_person()
     
     # controller
-    response = FindPersonController().find(person_information)
+    response = FindPersonController(person_repository).find(person_information)
     
     # view
     if response["success"]:
