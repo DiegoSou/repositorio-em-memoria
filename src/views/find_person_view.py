@@ -1,19 +1,21 @@
 import os
 from typing import Dict
 
-class PeopleFinderView:
-    def find_person_view(self) -> Dict: 
+
+class FindPersonView:
+    def find_person(self) -> Dict: 
         os.system('cls||clear')
         
-        print('Buscar Pessoa \n\n')
+        print('Buscar pessoa \n\n')
         name = input('Determine o nome da pessoa para busca: ')
-        
+
         person_finder_information = {
             "name": name
         }
         
         return person_finder_information
-    
+
+
     def find_person_success(self, message: Dict) -> None:
         os.system('cls||clear')
         
@@ -24,7 +26,7 @@ class PeopleFinderView:
             Registros: { message["count"] }
             Infos:
         '''
-        
+
         for person in message["info"]:
             success_message += f'''
                 Id: { person["id"] }
@@ -34,7 +36,8 @@ class PeopleFinderView:
             '''
         
         print(success_message)
-        
+
+
     def find_person_error(self, error: str) -> None:
         os.system('cls||clear')
         
@@ -43,5 +46,5 @@ class PeopleFinderView:
             
             Erro: { error }
         '''
-        
+
         print(error_message)

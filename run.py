@@ -1,4 +1,4 @@
-from src.main.process_handle import start
+from src.main import start
 
 if __name__ == "__main__":
     start()

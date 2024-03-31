@@ -1,0 +1,2 @@
+from .find_person_route import find_person_route
+from .register_person_route import register_person_route
