@@ -2,6 +2,17 @@ from pytest import raises
 
 from src.models.entities import Person
 from src.models.repositories.person_repository import person_repository
+from src.models.repositories.interface import PersonRepository
+
+
+class PersonProtocolTest(PersonRepository):
+    pass
+
+
+def test_person_repository_protocol():
+    person_protocol = PersonProtocolTest()
+    person_protocol.register_new(Person('Test Person', 21, 171))
+    person_protocol.find_by_name('Test Person')
 
 
 def test_register_new():

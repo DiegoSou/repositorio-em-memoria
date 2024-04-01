@@ -1,20 +1,25 @@
 from typing import Dict
 from src.models.entities import Person
-from src.models.repositories import person_repository
+from src.models.repositories import PersonRepository
+
 
 class RegisterPersonController:
+    def __init__(self, person_repository: PersonRepository):
+        self.__person_repository = person_repository
+
+
     def register(self, register_params: Dict) -> Dict:
         try:
             self.__validate_fields(register_params)
+            
+            person = Person(
+                register_params["name"], 
+                register_params["age"], 
+                register_params["height"], 
+            )
 
             # model
-            person_id = person_repository.register_new(
-                Person(
-                    register_params["name"], 
-                    register_params["age"], 
-                    register_params["height"], 
-                )
-            )
+            person_id = self.__person_repository.register_new(person)
 
             response = self.__format_response(person_id, register_params)
 

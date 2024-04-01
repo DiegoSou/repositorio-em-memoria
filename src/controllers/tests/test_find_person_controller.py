@@ -8,7 +8,7 @@ class PersonRepositoryMock:
 
 
     def register_new(self, _: Person) -> str:        
-        return '001'
+        pass
 
 
     def find_by_name(self, _: str) -> list[Person]:

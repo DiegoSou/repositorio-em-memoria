@@ -1,5 +1,6 @@
 from src.views import RegisterPersonView
 from src.controllers import RegisterPersonController
+from src.models.repositories import person_repository
 
 
 def register_person_route():
@@ -8,7 +9,7 @@ def register_person_route():
     register_params = register_person_page.register_person()
     
     # controller
-    response = RegisterPersonController().register(register_params)
+    response = RegisterPersonController(person_repository).register(register_params)
     
     # view
     if response["success"]:
